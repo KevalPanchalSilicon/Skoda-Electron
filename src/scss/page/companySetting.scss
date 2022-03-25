@@ -1,0 +1,272 @@
+.companySettingSec {
+	display: flex;
+	flex-wrap: wrap;
+	.companySettingLeft {
+		width: 60%;
+	}
+	.companySettingRight {
+		width: 40%;
+		padding-left: 30px;
+	}
+	.settingContent {
+		padding: 10px 15px 20px;
+	}
+	.settingHead {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		background-color: $main_bg_color;
+		padding: 10px 15px;
+		h3 {
+			margin: 0;
+			line-height: 22px;
+		}
+	}
+	.editIcon {
+		color: $icon_gray_color;
+		border-color: $icon_gray_color;
+		background-color: $white_color;
+	}
+}
+.companySettingBlocks {
+	box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.14);
+	background-color: $white_color;
+	margin-bottom: 40px;
+	border-radius: 5px;
+	overflow: hidden;
+}
+.companyProfileSec {
+	.comLogoAddr {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		.profileLogo {
+			width: 45%;
+			border: 1px solid $input_border;
+			padding: 10px;
+			position: relative;
+			.editIcon {
+				position: absolute;
+				top: -1px;
+				right: -1px;
+			}
+		}
+		.profileAddress {
+			width: 55%;
+			padding-left: 15px;
+			h3 {
+				margin-bottom: 5px;
+				line-height: 22px;
+				color: $primary_color;
+			}
+			p {
+				margin: 0;
+				width: calc(100% - 40px);
+			}
+			.addressText {
+				display: flex;
+				flex-wrap: wrap;
+				.addressIcon {
+					border: 1px solid $icon_gray_color;
+					border-radius: 5px;
+					padding: 5px;
+					color: $icon_gray_color;
+					margin-right: 10px;
+					display: flex;
+					flex-wrap: wrap;
+					align-items: center;
+					justify-content: center;
+					width: 30px;
+					height: 30px;
+				}
+			}
+		}
+	}
+	.contactPerson {
+		margin-top: 18px;
+		.contactPersonInner {
+			display: flex;
+			flex-wrap: wrap;
+			margin: 0 -8px;
+			.personBlock {
+				padding-left: 8px;
+				padding-right: 8px;
+				width: 33.33%;
+				.personBlockInner {
+					border: 1px solid #ddd;
+					height: 100%;
+					display: flex;
+					flex-wrap: wrap;
+					align-items: center;
+					justify-content: center;
+					padding: 10px 15px;
+					position: relative;
+					margin-left: 15px;
+					p {
+						margin: 0;
+						text-overflow: ellipsis;
+						overflow: hidden;
+						width: 100%;
+						text-align: center;
+					}
+					.personIcon {
+						border: 1px solid $icon_gray_color;
+						border-radius: 5px;
+						padding: 5px;
+						color: $icon_gray_color;
+						margin-right: 10px;
+						display: flex;
+						flex-wrap: wrap;
+						align-items: center;
+						justify-content: center;
+						width: 30px;
+						height: 30px;
+						position: absolute;
+						left: -15px;
+						top: 50%;
+						transform: translateY(-50%);
+						background-color: $white_color;
+					}
+				}
+			}
+		}
+	}
+}
+.settingContent {
+	.heroImage {
+		border: 1px solid $input_border;
+		border-radius: 8px;
+		overflow: hidden;
+		display: table;
+	}
+}
+.twoSettingBlocks {
+	display: flex;
+	flex-wrap: wrap;
+	.companyFavIcon {
+		width: 30%;
+		.heroImage {
+			margin: 0 auto;
+			padding: 10px;
+		}
+		.settingContent {
+			height: calc(100% - 47px);
+			display: flex;
+			align-items: center;
+		}
+	}
+	.companyThemeColor {
+		width: 65%;
+		margin-left: 5%;
+		.themeColor {
+			width: 100%;
+			height: 50px;
+			border-radius: 5px;
+		}
+	}
+}
+
+.preferencesBlock h5 {
+	font-size: 16px;
+    padding: 18px 15px 8px;
+    border-top: 1px solid $input_border;
+    margin: 0;
+}
+.preferenceRight {
+	display: flex;
+	.infoWrap {
+		width: 20px;
+		height: 20px;
+		border: 1px solid $input_label_color;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-left: 8px;
+		.infoIcon {
+			width: 14px;
+			height: 14px;
+			fill: $input_label_color;
+		}
+	}
+	.editIcon {
+		border-radius: 50%;
+		font-size: 10px;
+		color: #ffc26c;
+		border-color: #ffc26c;
+		width: 22px;
+		height: 22px;
+		padding: 0;
+		margin-left: 8px;
+	}
+}
+
+.preferencesSec {
+	padding-top: 15px;
+	.preferencesList {
+		padding: 0;
+		list-style: none;
+		li {
+			padding: 5px 15px;
+			display: flex;
+			justify-content: space-between;
+			p {
+				color: $black_500;
+				margin: 0;
+				padding-right: 10px;
+			}
+			span {
+				color: $black_color;
+				overflow: hidden;
+    			text-overflow: ellipsis;
+				text-align: right;
+			}
+			&:last-child {
+				border-bottom: 0;
+			}
+		}
+	}
+}
+
+.themeRGMValueInner {
+	display: flex;
+	align-items: center;
+	margin-top: 20px;
+	> div {
+		width: 33.33%;
+		text-align: center;
+		color: $input_label_color;
+		.themeRGMValueVal {
+			display: inline-block;
+			border: 1px solid $input_border;
+			width: 45px;
+			height: 30px;
+			line-height: 30px;
+			text-align: center;
+			color: $black_color;
+		}
+	}
+}
+.help_text {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+	li {
+		font-size: 12px;
+		margin-top: 6px;
+		position: relative;
+		color: $input_label_color;
+		padding-left: 14px;
+		&:before {
+			content: '';
+			width: 5px;
+			height: 5px;
+			display: inline-block;
+			background-color: $primary_color;
+			border-radius: 50%;
+			position: absolute;
+			top: 6px;
+			left: 0;
+		}
+	}
+}

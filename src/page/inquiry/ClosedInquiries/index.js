@@ -1,0 +1,63 @@
+import { PageHeader } from "antd";
+import { observer } from "mobx-react";
+import { useEffect, useState } from "react";
+import BreadcrumbComponent from "../../../component/BreadcrumbComponent";
+import RecordPerPage from "../../../component/RecordPerPage";
+import { BreadcrumbConfig } from "../../../config/BreadcrumbConfig";
+import useStore from "../../../store";
+import ListComponent from "./component/ListComponent";
+import ReopenComponent from "./component/ReopenComponent";
+import ViewComponent from "./component/ViewComponent";
+
+const ClosedInquiries = observer((props) => {
+	const [viewModal, setViewModal] = useState(false);
+	const [reopenModal, setReopenModal] = useState(false);
+	const {
+		ClosedInquiriesStore: { getList, setPageSize, per_page, setViewValues, setReopenValues },
+	} = useStore();
+
+	// Open & Close  form for edit State
+	const openViewModal = (data) => {
+		setViewValues(data);
+		setViewModal(true);
+	};
+	const closeViewModal = () => setViewModal(false);
+
+	// Open & Close  form for edit State
+	const openReopenModal = (data) => {
+		setReopenValues(data);
+		setReopenModal(true);
+	};
+	const closeReopenModal = () => setReopenModal(false);
+
+	useEffect(() => {
+		getList();
+	}, [getList]);
+
+	return (
+		<PageHeader
+			title={BreadcrumbConfig.ClosedInquiries.title}
+			className="tableAreaSec"
+			extra={
+				<BreadcrumbComponent items={BreadcrumbConfig.ClosedInquiries.path} />
+			}
+		>
+			<div className="listCountNew">
+				<RecordPerPage
+					key="2"
+					style={{ width: "150px" }}
+					defaultValue={per_page + " per page"}
+					onChange={setPageSize}
+				/>
+			</div>
+			<ViewComponent visible={viewModal} close={closeViewModal} />
+			<ReopenComponent visible={reopenModal} close={closeReopenModal} />
+			<ListComponent
+				openViewModal={openViewModal}
+				openReopenModal={openReopenModal}
+			/>
+		</PageHeader>
+	);
+});
+
+export default ClosedInquiries;

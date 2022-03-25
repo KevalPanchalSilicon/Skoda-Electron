@@ -1,0 +1,60 @@
+.mainErrorDiv {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: auto;
+	margin-bottom: auto;
+	.ErrorDivWrapper {
+		background-color: #fff;
+		padding: 50px;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		border-radius: 20px;
+		text-align: center;
+		box-shadow: 0px 8px 25px 0px rgba(66, 66, 66, 0.2);
+		max-width: 1338px;
+		width: 90%;
+		.ErrorImage {
+			width: 45%;
+			padding-right: 50px;
+		}
+		.ErrorText {
+			width: 55%;
+			h1 {
+				font-size: 50px;
+				color: $black_color;
+				text-shadow: 0px 3px 0px rgba(143, 143, 143, 0.38);
+			}
+			p {
+				font-size: 22px;
+				color: $input_label_color;
+				margin: 0;
+			}
+		}
+	}
+	&.page404_sec {
+		.ErrorImage {
+			width: 100%;
+		}
+		.ErrorText {
+			width: 100%;
+			p {
+				margin-top: 50px;
+			}
+		}
+	}
+	@include desktop {
+		.ErrorDivWrapper .ErrorText {
+			h1 {
+				font-size: 42px;
+			}
+			p {
+				font-size: 18px;
+			}
+		}
+	}
+}

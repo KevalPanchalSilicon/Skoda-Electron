@@ -1,0 +1,47 @@
+.reportWrap {
+	box-shadow: 0px 10px 8px -8px rgba(0,0,0,0.2);
+    padding: 0;
+    border-radius: 8px;
+    border-left: 3px solid $primary_color;
+	.ant-card-head {
+		min-height: 1px;
+		padding: 10px 25px;
+		border-bottom: 0;
+		.ant-card-head-title {
+			padding: 0;
+			font-size: 20px;
+    		letter-spacing: 0.02em;
+			text-transform: uppercase;
+		}
+	}
+	.ant-card-body {
+		padding: 0px 25px 10px 25px;
+		.reportInner {
+			margin: 10px 20px 10px 0;
+			padding: 0;
+			border: 1px solid #ddd;
+			border-radius: 4px;
+			cursor: pointer;
+			display: inline-flex;
+			width: 260px;
+			overflow: hidden;
+			&:hover {
+				border: 1px solid #00b825;
+			}
+			.reportIcon {
+				width: 42px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				background-color: #f3f3f3;
+				font-size: 20px;
+				color: $primary_color;
+			}
+			p {
+				margin: 0;
+    			padding: 10px 10px;
+				font-size: 16px;
+			}
+		}
+	}
+}

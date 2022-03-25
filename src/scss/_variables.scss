@@ -1,0 +1,32 @@
+$primary_color: rgba(var(--main-color), 1); // RGBA color
+$primary: var(--main-color); // RGB color
+// $bannerImg: var(--heroImage);
+// $primary_color_light: rgba(var(--main-color), 0.5);
+// $danger_color: $red;
+$danger_color: #ff3131;
+$success_color: $green;
+$success_dark: darken($success_color, 10%);
+$danger_dark: darken($danger_color, 10%);
+$scroll_light_color: #e9e9e9;
+$scroll_dark_color: #b5b8bb;
+$scroll_hover_color: #93999e;
+$ag_alter_color: #f8f8f8;
+$loader_bg: white;
+$white_color: #ffffff;
+$input_border: #d0d0d0;
+$icon_gray_color: #a2a2a2;
+$black_color: #141414;
+$input_label_color: #7c7c7c;
+$main_bg_color: #f4f4f7;
+$edit_icon_color: #ffc26c;
+$ant_switch_color: #2ec158;
+
+$gutter: 24px;
+
+$sidebar_width: 336px;
+// $sidebar_height: calc(100vh - 175px);
+// $logo_height: 95px;
+
+// @include desktop {
+//     $sidebar_height: calc(100vh - 150px);
+// }

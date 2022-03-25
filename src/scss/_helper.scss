@@ -1,0 +1,104 @@
+// helper for margin
+$margin: 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100;
+@each $m in $margin {
+	.ml-#{$m} {
+		margin-left: $m + px;
+	}
+	.mr-#{$m} {
+		margin-right: $m + px;
+	}
+	.mt-#{$m} {
+		margin-top: $m + px;
+	}
+	.mb-#{$m} {
+		margin-bottom: $m + px;
+	}
+	.m-#{$m} {
+		margin: $m + px;
+	}
+}
+.ml-auto {
+	margin-left: auto;
+}
+.mr-auto {
+	margin-right: auto;
+}
+
+// helper for padding
+$padding: 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100;
+@each $p in $padding {
+	.pl-#{$p} {
+		padding-left: $p + px;
+	}
+	.pr-#{$p} {
+		padding-right: $p + px;
+	}
+	.pt-#{$p} {
+		padding-top: $p + px;
+	}
+	.pb-#{$p} {
+		padding-bottom: $p + px;
+	}
+	.p-#{$p} {
+		padding: $p + px;
+	}
+}
+
+// helper for width
+$widths: 50, 100, 150, 200, 300, 400, 500, 600, 700, 800, 900;
+@each $width in $widths {
+	.w#{$width} {
+		width: $width + px;
+		max-width: 100%;
+	}
+}
+$widths: 10, 20, 30, 40, 50, 60, 70, 80, 90, 100;
+@each $width in $widths {
+	.w-#{$width} {
+		width: #{$width + "%"};
+		max-width: 100%;
+	}
+}
+
+// helper for display property
+.d-flex {
+	display: flex;
+}
+.align-items-center {
+	align-items: center;
+}
+.align-self-center {
+	align-self: center;
+}
+.justify-content-end {
+	justify-content: flex-end;
+}
+.justify-content-center {
+	justify-content: center;
+}
+.justify-space-between {
+	justify-content: space-between;
+}
+
+// alignment helper
+.text-center {
+	text-align: center;
+}
+.text-left {
+	text-align: left;
+}
+.text-right {
+	text-align: right;
+}
+.text-justify {
+	text-align: justify;
+}
+
+// text-colors
+.text-danger {
+	color: $danger_color !important;
+}
+
+.text-success {
+	color: $success_color !important;
+}

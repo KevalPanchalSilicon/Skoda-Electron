@@ -1,0 +1,145 @@
+.download_sample_sec {
+	text-align: center;
+	a.ant-btn {
+		padding: 5px 20px 3px 5px;
+		height: auto;
+		border-color: $primary_color;
+		color: $primary_color;
+		span.anticon {
+			background-color: $primary_color;
+			border-radius: 50%;
+			color: $white_color;
+			font-size: 20px;
+			padding: 2px 4px;
+		}
+		+ span {
+			margin-left: 20px;
+		}
+	}
+}
+.upload_verify_sec {
+	background-color: $black_200;
+	margin: 30px 0;
+	padding: 15px;
+	button {
+		// @include themeColorOpacity($primary, 0.1);
+		// color: $primary_color;
+		border: 1px solid $primary_color;
+		border-radius: 8px;
+	}
+	.ant-upload.ant-upload-select-picture-card .upload_btn svg {
+		width: 100%;
+	}
+	.ant-upload.ant-upload-select-picture-card .upload_btn p {
+		width: 100%;
+	}
+	.upload_left_sec ul {
+		padding-left: 15px;
+		li {
+			color: $input_label_color;
+		}
+	}
+}
+.import_total_sec {
+	margin: 30px 0;
+	+ .import_total_sec {
+		margin-top: 50px;
+	}
+}
+.import_block {
+	text-align: center;
+	position: relative;
+	padding: 18px 6px 8px;
+	border-radius: 6px;
+	.import_block_title {
+		border-radius: 6px;
+		font-size: 12px;
+		padding: 3px 5px;
+		margin: 0;
+		position: absolute;
+		top: -12px;
+		left: 9%;
+		width: 82%;
+		color: $white_color;
+	}
+	p {
+		font-size: 26px;
+		margin: 0;
+	}
+	&.import_total {
+		@include themeColorOpacity(#40a9ff, 0.2);
+		.import_block_title {
+			background-color: #40a9ff;
+		}
+		p {
+			color: #40a9ff;
+		}
+	}
+	&.import_verified {
+		@include themeColorOpacity(#52c41a, 0.2);
+		.import_block_title {
+			background-color: #52c41a;
+		}
+		p {
+			color: #52c41a;
+		}
+	}
+	&.import_error {
+		@include themeColorOpacity(#ff4d4f, 0.2);
+		.import_block_title {
+			background-color: #ff4d4f;
+		}
+		p {
+			color: #ff4d4f;
+		}
+	}
+}
+.import_total_text {
+	p {
+		font-size: 12px;
+	}
+	button {
+		border-color: 1px solid $primary_color;
+		// color: $primary_color;
+		// @include themeColorOpacity($primary, 0.1);
+		border-radius: 6px;
+	}
+}
+.inward_btn {
+    align-items: flex-end;
+    display: flex;
+	button {
+		padding: 12px 15px;
+		line-height: normal;
+		height: auto;
+		border-radius: 8px;
+	}
+}
+.import_table {
+	.ant-table-wrapper {
+		tr {
+			td {
+				border-bottom: 1px solid $input_border;
+				border-left: 1px solid $input_border;
+				text-align: center;
+				padding: 8px;
+				color: $black_700;
+				&.text-left {
+					text-align: left;
+				}
+			}
+			th {
+				border-bottom: 1px solid $input_border;
+				border-left: 1px solid $input_border;
+				border-top: 1px solid $input_border;
+				text-align: center;
+				background-color: $black_200;
+				padding: 10px;
+				color: $black_color;
+			}
+			&:nth-child(odd) {
+				background-color: $black_100;
+			}
+		}
+	}
+}

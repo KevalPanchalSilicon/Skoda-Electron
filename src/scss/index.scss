@@ -1,0 +1,21 @@
+@import "./colors";
+@import "./variables";
+@import "./mixin";
+@import "./fonts/fonts.css";
+
+@import "./core";
+@import "./helper";
+@import "./form";
+@import "./sidebar";
+
+// INCLUDE SCSS FOR INDIVIDUAL PAGES
+
+@import "./page/login";
+@import "./page/errorPages";
+@import "./page/managecomponent";
+@import "./page/companySetting.scss";
+@import "./page/wholesalepurchase.scss";
+@import "./page/inquiry.scss";
+@import "./page/widget.scss";
+@import "./page/generalReports.scss";
+// @import "./material.css";

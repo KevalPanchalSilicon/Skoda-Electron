@@ -1,0 +1,31 @@
+// mixin
+@mixin themeColorOpacity($rgbColor, $opacity) {
+	background-color: rgba($rgbColor, $opacity);
+}
+/*********************
+BREAKPOINTS
+*********************/
+
+@mixin desktop {
+	@media screen and (max-width: 1600px) {
+		@content;
+	}
+}
+
+@mixin ipad {
+	@media screen and (max-width: 1199px) {
+		@content;
+	}
+}
+
+@mixin mini-tablet {
+	@media screen and (max-width: 992px) {
+		@content;
+	}
+}
+
+@mixin mobile {
+	@media screen and (max-width: 640px) {
+		@content;
+	}
+}

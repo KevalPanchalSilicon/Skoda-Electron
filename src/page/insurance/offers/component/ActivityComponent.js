@@ -1,0 +1,117 @@
+import React, { useEffect } from "react";
+import { Form, Button, Drawer, Row, Col, Tooltip } from "antd";
+import { observer } from "mobx-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import useStore from "../../../../store";
+import { AgGridReact } from "@ag-grid-community/react";
+import LocalGridConfig from "../../../../config/LocalGridConfig";
+import { AllModules } from "@ag-grid-enterprise/all-modules";
+import { vsmCommon } from "../../../../config/messages";
+import { DateComparator } from "../../../../utils/GlobalFunction";
+
+const ActivityComponent = observer((props) => {
+	const [form] = Form.useForm();
+	const {
+		InsuranceOfferStore,
+		InsuranceOfferStore: { ActivityLogList, setupGrid, onFilterChanged }
+	} = useStore();
+
+	useEffect(() => {
+		if (props.visible && InsuranceOfferStore.viewActivityLogvalues) {
+			InsuranceOfferStore.getActivityLog(InsuranceOfferStore.viewActivityLogvalues.ins_offer_id)
+		}
+	}, [InsuranceOfferStore, props.visible, form])
+
+	// reset form and close add form
+	const close = () => {
+		props.close();
+	};
+
+	const gridOptions = {
+		columnDefs: [
+			{
+				headerName: "# ID",
+				field: "srno",
+				filter: "agNumberColumnFilter",
+				pinned: "left",
+				minWidth: 120,
+				width: 120,
+			},
+			{
+				headerName: "Date",
+				field: "created",
+				filter: "agDateColumnFilter",
+				filterParams: {
+					buttons: ['reset'],
+					inRangeInclusive: true,
+					suppressAndOrCondition: true,
+					comparator: DateComparator
+				},
+			},
+			{
+				headerName: "User",
+				field: "user.name",
+			},
+			{
+				headerName: "Note",
+				field: "note",
+				cellRendererFramework: function (params) {
+					return (
+						<Tooltip title={params.data.note}><p>{params.data.note}</p></Tooltip>
+					)
+				},
+			},
+			{
+				headerName: "Status",
+				field: "status",
+				filter: "agSetColumnFilter",
+				sortable: false
+			},
+		],
+	};
+
+	return InsuranceOfferStore.viewActivityLogvalues ? (
+		<Drawer
+			className="addModal"
+			title="Activity Log"
+			width="80%"
+			visible={props.visible}
+			closeIcon={<FontAwesomeIcon icon={faTimes} />}
+			onClose={close}
+			footer={[
+				<Button
+					key="1"
+					htmlType="button"
+					className="cancelBtn mr-35"
+					onClick={close}
+				>
+					Cancel
+				</Button>,
+			]}
+		>
+			<Row>
+				<Col xs={{ span: 24 }}>
+					<div className="ag-theme-alpine grid_wrapper">
+						<AgGridReact
+							rowHeight={LocalGridConfig.rowHeight}
+							headerHeight={LocalGridConfig.headerHeight}
+							rowData={ActivityLogList}
+							modules={AllModules}
+							columnDefs={gridOptions.columnDefs}
+							defaultColDef={LocalGridConfig.defaultColDef}
+							columnTypes={LocalGridConfig.columnTypes}
+							overlayNoRowsTemplate={vsmCommon.noRecord}
+							onGridReady={setupGrid}
+							gridOptions={LocalGridConfig.options}
+							onFilterChanged={onFilterChanged}
+							onSortChanged={onFilterChanged}
+						/>
+					</div>
+				</Col>
+			</Row>
+		</Drawer>
+	) : null
+});
+
+export default ActivityComponent;
