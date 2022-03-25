@@ -1,0 +1,9 @@
+version: 0.1.0
+files:
+  - url: Skoda-App-0.1.0.AppImage
+    sha512: 7yH2rarNbfxfXXVY629i6WDBXLUHhfoTnmtJdT/t0hmZL1tZNiCJseCKNRsLgjpJofDa/FlRvR7xlMV26lc8Uw==
+    size: 319334404
+    blockMapSize: 333848
+path: Skoda-App-0.1.0.AppImage
+sha512: 7yH2rarNbfxfXXVY629i6WDBXLUHhfoTnmtJdT/t0hmZL1tZNiCJseCKNRsLgjpJofDa/FlRvR7xlMV26lc8Uw==
+releaseDate: '2022-03-25T10:41:27.153Z'

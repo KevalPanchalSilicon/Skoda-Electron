@@ -10,14 +10,22 @@
 	"build": {
 		"appId": "com.electron.skoda",
 		"productName": "Skoda App",
+		"compression": "normal",
+		"publish": [{
+			"provider": "github",
+			"owner": "KevalPanchalSilicon",
+			"repo": "Skoda-Electron"
+        }],
 		"mac": {
-			"icon": "build/stellar-skoda-icon.icns"
+			"icon": "build/stellar-skoda-icon.icns",
+			"category": "Utility"
 		},
 		"win": {
 			"icon": "build/stellar-skoda-icon.png"
 		},
 		"linux": {
-			"icon": "build/stellar-skoda-icon.png"
+			"icon": "build/stellar-skoda-icon.png",
+			"category": "Utility"
 		},
 		"files": [
 			"build/**/*",
